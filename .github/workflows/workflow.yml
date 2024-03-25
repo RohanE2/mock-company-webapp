@@ -1,0 +1,16 @@
+name: Simulated Jenkins
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: ./gradlew assemble
+
+    - name: Test
+      run: ./gradlew test
